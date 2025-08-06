@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Disable framework detection
+[build.processing]
+  skip_processing = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
