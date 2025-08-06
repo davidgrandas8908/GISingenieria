@@ -11,6 +11,12 @@
   to = "/index.html"
   status = 200
 
+# Handle root path specifically
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
 # Handle specific routes
 [[redirects]]
   from = "/home"
