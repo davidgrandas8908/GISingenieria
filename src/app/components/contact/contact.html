@@ -60,7 +60,24 @@
 
       <div class="contact-form">
         <h3>Envíanos un Mensaje</h3>
-        <form>
+        
+        <!-- Mensaje de éxito -->
+        <div *ngIf="showSuccessMessage" class="alert alert-success">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <span>¡Mensaje enviado exitosamente! Te responderemos pronto.</span>
+        </div>
+
+        <!-- Mensaje de error -->
+        <div *ngIf="showErrorMessage" class="alert alert-error">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+          <span>{{ errorMessage }}</span>
+        </div>
+
+        <form (submit)="onSubmit($event)" id="contactForm">
           <div class="form-group">
             <label for="name">Nombre Completo *</label>
             <input type="text" id="name" name="name" required>
@@ -99,7 +116,10 @@
             <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
           </div>
 
-          <button type="submit" class="btn-submit">Enviar Mensaje</button>
+          <button type="submit" class="btn-submit" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">Enviar Mensaje</span>
+            <span *ngIf="isSubmitting">Enviando...</span>
+          </button>
         </form>
       </div>
     </div>
