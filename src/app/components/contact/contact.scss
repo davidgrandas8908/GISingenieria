@@ -231,7 +231,7 @@
       width: 100%;
       padding: 1rem 2rem;
       background: var(--gradient-primary);
-      color: var(--primary-white);
+      color: var(--primary-white) !important;
       border: none;
       border-radius: 12px;
       font-size: 1.1rem;
@@ -239,10 +239,15 @@
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: var(--shadow-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
 
       &:hover:not(:disabled) {
         transform: translateY(-2px);
         box-shadow: var(--shadow-heavy);
+        background: var(--gradient-primary);
       }
 
       &:active:not(:disabled) {
@@ -260,6 +265,7 @@
       span {
         color: var(--primary-white) !important;
         font-weight: 600;
+        display: inline-block;
       }
     }
   }
