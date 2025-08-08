@@ -24,8 +24,8 @@ export class ContactComponent {
     const formData = new FormData(form);
 
     try {
-      // Endpoint temporal de Formspree - necesitamos crear uno nuevo
-      const response = await fetch('https://formspree.io/f/xpzgwqzg', {
+      // Endpoint de Formspree para danielfg9216@gmail.com
+      const response = await fetch('https://formspree.io/f/mldloqwp', {
         method: 'POST',
         body: formData,
         headers: {
