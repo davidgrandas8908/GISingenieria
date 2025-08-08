@@ -72,7 +72,7 @@
 
     .subtitle {
       font-size: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       color: var(--primary-gray);
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       max-width: 600px;
@@ -85,6 +85,23 @@
 
       @media (max-width: 480px) {
         font-size: 1rem;
+      }
+    }
+
+    .author {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--primary-orange);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      font-weight: 600;
+      opacity: 0.9;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
       }
     }
 
