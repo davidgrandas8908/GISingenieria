@@ -1,18 +1,18 @@
 <header class="header">
   <div class="container">
-    <div class="logo" routerLink="/home" style="cursor: pointer;">
+    <div class="logo" routerLink="/home">
       <h1>GIS Ingeniería</h1>
       <span class="tagline">& Soluciones</span>
     </div>
     
-    <nav class="nav">
-      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
-      <a routerLink="/about" routerLinkActive="active">Nosotros</a>
-      <a routerLink="/services" routerLinkActive="active">Servicios</a>
-      <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+    <nav class="nav" [class.active]="isMenuOpen">
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Servicios</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
     </nav>
     
-    <div class="mobile-menu-toggle">
+    <div class="mobile-menu-toggle" [class.active]="isMenuOpen" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
