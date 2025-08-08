@@ -5,36 +5,9 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirect all routes to index.html for Angular client-side routing
+# Handle all routes including root for Angular client-side routing
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Handle root path specifically
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-
-# Handle specific routes
-[[redirects]]
-  from = "/home"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/about"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/services"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/contact"
   to = "/index.html"
   status = 200
 
