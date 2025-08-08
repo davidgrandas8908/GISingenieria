@@ -181,13 +181,23 @@
       width: 100%;
       padding: 1rem 2rem;
       background: linear-gradient(135deg, #4a90e2, #357abd);
-      color: white;
+      color: white !important;
       border: none;
       border-radius: 8px;
       font-size: 1.1rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+
+      span {
+        color: white !important;
+        font-weight: 600;
+      }
 
       &:hover:not(:disabled) {
         transform: translateY(-2px);
