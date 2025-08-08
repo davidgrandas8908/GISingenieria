@@ -77,7 +77,10 @@
           <span>{{ errorMessage }}</span>
         </div>
 
-        <form (submit)="onSubmit($event)" id="contactForm">
+        <form action="https://formspree.io/f/xpzgwqzg" method="POST" (submit)="onSubmit($event)" id="contactForm">
+          <input type="hidden" name="_next" value="https://gisingenieria.netlify.app/contact">
+          <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - GIS Ingeniería">
+          
           <div class="form-group">
             <label for="name">Nombre Completo *</label>
             <input type="text" id="name" name="name" required>
