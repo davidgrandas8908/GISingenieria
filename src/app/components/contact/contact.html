@@ -116,8 +116,7 @@
           </div>
 
           <button type="submit" class="btn-submit" [disabled]="isSubmitting">
-            <span *ngIf="!isSubmitting">Contáctanos</span>
-            <span *ngIf="isSubmitting">Enviando...</span>
+            {{ isSubmitting ? 'Enviando...' : 'Contáctanos' }}
           </button>
         </form>
       </div>

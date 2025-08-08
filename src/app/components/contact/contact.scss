@@ -243,6 +243,7 @@
       align-items: center;
       justify-content: center;
       min-height: 50px;
+      text-align: center;
 
       &:hover:not(:disabled) {
         transform: translateY(-2px);
@@ -260,12 +261,6 @@
         transform: none;
         box-shadow: none;
         opacity: 0.7;
-      }
-
-      span {
-        color: var(--primary-white) !important;
-        font-weight: 600;
-        display: inline-block;
       }
     }
   }
