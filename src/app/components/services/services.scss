@@ -81,7 +81,6 @@
     border-radius: 20px;
     padding: 2.5rem;
     box-shadow: var(--shadow-light);
-    transition: all 0.3s ease;
     border: 1px solid rgba(8, 51, 53, 0.1);
     position: relative;
     overflow: hidden;
@@ -98,32 +97,19 @@
       transition: transform 0.3s ease;
     }
 
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-heavy);
-      border-color: var(--primary-orange);
-
-      &::before {
-        transform: scaleX(1);
-      }
-
-      .service-icon {
-        transform: scale(1.1) rotate(5deg);
-        background: var(--gradient-primary);
-      }
+    &:hover::before {
+      transform: scaleX(1);
     }
 
     .service-icon {
       width: 80px;
       height: 80px;
-      background: var(--gradient-secondary);
-      border-radius: 20px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-medium);
 
       svg {
         width: 40px;
@@ -206,15 +192,7 @@
       border-radius: 50px;
       font-weight: 600;
       font-size: 1.1rem;
-      transition: all 0.3s ease;
       box-shadow: var(--shadow-medium);
-
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-heavy);
-        background: var(--primary-orange);
-        filter: brightness(1.1);
-      }
 
       @media (max-width: 768px) {
         padding: 0.8rem 2rem;

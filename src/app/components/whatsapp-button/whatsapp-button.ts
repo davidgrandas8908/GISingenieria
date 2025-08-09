@@ -15,3 +15,4 @@ export class WhatsAppButtonComponent {
     window.open(url, '_blank');
   }
 }
+

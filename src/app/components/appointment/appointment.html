@@ -1,0 +1,205 @@
+<section class="appointment-section" id="agenda-cita">
+  <div class="container">
+    <div class="section-header">
+      <h2>📅 Agenda tu Cita</h2>
+      <p>Reserva una consulta con nuestros expertos en ingeniería civil</p>
+    </div>
+
+    <div class="appointment-container">
+      <div class="appointment-info">
+        <div class="info-card">
+          <div class="icon">🕒</div>
+          <h3>Horarios Disponibles</h3>
+          <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+          <p>Sábados: 9:00 AM - 2:00 PM</p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">📍</div>
+          <h3>Ubicación</h3>
+          <p>Consultas presenciales y virtuales disponibles</p>
+          <p>Agenda flexible según tu disponibilidad</p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">✅</div>
+          <h3>Confirmación Automática</h3>
+          <p>Recibirás confirmación por email</p>
+          <p>Evento agregado a tu calendario</p>
+        </div>
+      </div>
+
+      <div class="appointment-form-container">
+        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="appointment-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nombre Completo *</label>
+              <input 
+                type="text" 
+                id="name" 
+                formControlName="name" 
+                placeholder="Tu nombre completo"
+                [class.error]="appointmentForm.get('name')?.invalid && appointmentForm.get('name')?.touched"
+              >
+              <div class="error-message" *ngIf="appointmentForm.get('name')?.invalid && appointmentForm.get('name')?.touched">
+                <span *ngIf="appointmentForm.get('name')?.errors?.['required']">El nombre es requerido</span>
+                <span *ngIf="appointmentForm.get('name')?.errors?.['minlength']">El nombre debe tener al menos 2 caracteres</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                formControlName="email" 
+                placeholder="tu@email.com"
+                [class.error]="appointmentForm.get('email')?.invalid && appointmentForm.get('email')?.touched"
+              >
+              <div class="error-message" *ngIf="appointmentForm.get('email')?.invalid && appointmentForm.get('email')?.touched">
+                <span *ngIf="appointmentForm.get('email')?.errors?.['required']">El email es requerido</span>
+                <span *ngIf="appointmentForm.get('email')?.errors?.['email']">Ingresa un email válido</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Teléfono *</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                formControlName="phone" 
+                placeholder="+52 (123) 456-7890"
+                [class.error]="appointmentForm.get('phone')?.invalid && appointmentForm.get('phone')?.touched"
+              >
+              <div class="error-message" *ngIf="appointmentForm.get('phone')?.invalid && appointmentForm.get('phone')?.touched">
+                <span *ngIf="appointmentForm.get('phone')?.errors?.['required']">El teléfono es requerido</span>
+                <span *ngIf="appointmentForm.get('phone')?.errors?.['pattern']">Ingresa un teléfono válido</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Servicio de Interés *</label>
+              <select 
+                id="service" 
+                formControlName="service"
+                [class.error]="appointmentForm.get('service')?.invalid && appointmentForm.get('service')?.touched"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option value="Diseño Estructural">Diseño Estructural</option>
+                <option value="Análisis de Suelos">Análisis de Suelos</option>
+                <option value="Construcción Residencial">Construcción Residencial</option>
+                <option value="Construcción Comercial">Construcción Comercial</option>
+                <option value="Rehabilitación Estructural">Rehabilitación Estructural</option>
+                <option value="Consultoría Técnica">Consultoría Técnica</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <div class="error-message" *ngIf="appointmentForm.get('service')?.invalid && appointmentForm.get('service')?.touched">
+                <span *ngIf="appointmentForm.get('service')?.errors?.['required']">Selecciona un servicio</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Fecha de Cita *</label>
+              <input 
+                type="date" 
+                id="date" 
+                formControlName="date" 
+                (change)="onDateChange($event)"
+                [class.error]="appointmentForm.get('date')?.invalid && appointmentForm.get('date')?.touched"
+              >
+              <div class="error-message" *ngIf="appointmentForm.get('date')?.invalid && appointmentForm.get('date')?.touched">
+                <span *ngIf="appointmentForm.get('date')?.errors?.['required']">Selecciona una fecha</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="time">Hora de Cita *</label>
+              <select 
+                id="time" 
+                formControlName="time"
+                (change)="onTimeChange($event)"
+                [class.error]="appointmentForm.get('time')?.invalid && appointmentForm.get('time')?.touched"
+              >
+                <option value="">Selecciona una hora</option>
+                <option *ngFor="let slot of availableSlots" [value]="slot">{{slot}}</option>
+              </select>
+              <div class="error-message" *ngIf="appointmentForm.get('time')?.invalid && appointmentForm.get('time')?.touched">
+                <span *ngIf="appointmentForm.get('time')?.errors?.['required']">Selecciona una hora</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="description">Descripción Adicional</label>
+            <textarea 
+              id="description" 
+              formControlName="description" 
+              placeholder="Describe brevemente tu proyecto o consulta (opcional)"
+              rows="4"
+              maxlength="500"
+            ></textarea>
+            <div class="char-count">
+              {{appointmentForm.get('description')?.value?.length || 0}}/500 caracteres
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button 
+              type="submit" 
+              class="btn-primary" 
+              [disabled]="appointmentForm.invalid || isSubmitting"
+            >
+              <span *ngIf="!isSubmitting">📅 Agendar Cita</span>
+              <span *ngIf="isSubmitting">⏳ Agendando...</span>
+            </button>
+          </div>
+
+          <!-- Mensajes de estado -->
+          <div class="form-messages" *ngIf="submitSuccess || submitError">
+            <div class="success-message" *ngIf="submitSuccess">
+              <div class="message-icon">✅</div>
+              <div class="message-content">
+                <h4>¡Cita Agendada Exitosamente!</h4>
+                <p>Tu cita ha sido agendada y se ha abierto Google Calendar para confirmar. También recibirás un email de confirmación.</p>
+                <button type="button" class="btn-secondary" (click)="resetForm()">Agendar Otra Cita</button>
+              </div>
+            </div>
+
+            <div class="error-message" *ngIf="submitError">
+              <div class="message-icon">❌</div>
+              <div class="message-content">
+                <h4>Error al Agendar</h4>
+                <p>{{submitError}}</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="calendar-integration">
+      <div class="integration-info">
+        <h3>🔄 Sincronización con Google Calendar</h3>
+        <p>Al agendar tu cita, se creará automáticamente un evento en tu calendario de Google con todos los detalles de la consulta.</p>
+        <div class="integration-features">
+          <div class="feature">
+            <span class="feature-icon">📧</span>
+            <span>Invitación por email</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">⏰</span>
+            <span>Recordatorios automáticos</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">📱</span>
+            <span>Sincronización móvil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
