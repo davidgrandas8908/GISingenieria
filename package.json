@@ -7,8 +7,7 @@
     "build": "ng build",
     "build:netlify": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:gis-ingenieria-web": "node dist/gis-ingenieria-web/server/server.mjs"
+    "test": "ng test"
   },
   "prettier": {
     "overrides": [
