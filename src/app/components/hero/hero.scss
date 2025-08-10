@@ -18,7 +18,7 @@
     bottom: 0;
     background: 
       linear-gradient(135deg, rgba(8, 51, 53, 0.9), rgba(8, 51, 53, 0.8)),
-      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23f0f0f0"/><circle cx="200" cy="200" r="50" fill="%23E67E22" opacity="0.3"/><circle cx="1000" cy="300" r="80" fill="%233498DB" opacity="0.2"/><rect x="400" y="400" width="200" height="150" fill="%238B4513" opacity="0.1"/></svg>');
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23f0f0f0"/><circle cx="200" cy="200" r="50" fill="%23cca300" opacity="0.3"/><circle cx="1000" cy="300" r="80" fill="%233498DB" opacity="0.2"/><rect x="400" y="400" width="200" height="150" fill="%238B4513" opacity="0.1"/></svg>');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -34,7 +34,7 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, 
-      rgba(230, 126, 34, 0.1) 0%, 
+      rgba(204, 163, 0, 0.1) 0%, 
       rgba(52, 152, 219, 0.1) 50%, 
       rgba(8, 51, 53, 0.2) 100%);
     z-index: -1;
@@ -157,16 +157,16 @@
         }
 
         &.btn-appointment {
-          background: linear-gradient(135deg, var(--primary-orange), #ff6b35);
+          background: linear-gradient(135deg, var(--primary-orange), #d4b800);
           color: white;
-          box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+          box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
           border: 2px solid transparent;
           animation: pulse 2s infinite;
 
           &:hover {
-            background: linear-gradient(135deg, #ff6b35, var(--primary-orange));
+            background: linear-gradient(135deg, #d4b800, var(--primary-orange));
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+            box-shadow: 0 6px 20px rgba(204, 163, 0, 0.4);
             animation: none;
           }
         }
@@ -311,12 +311,12 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+    box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
   }
   50% {
-    box-shadow: 0 4px 20px rgba(230, 126, 34, 0.5);
+    box-shadow: 0 4px 20px rgba(204, 163, 0, 0.5);
   }
   100% {
-    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+    box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
   }
 }

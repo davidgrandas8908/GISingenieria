@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 51, 53, 0.05), rgba(230, 126, 34, 0.05));
+    background: linear-gradient(135deg, rgba(8, 51, 53, 0.05), rgba(204, 163, 0, 0.05));
     z-index: 0;
   }
 
@@ -180,7 +180,7 @@
           &:focus {
             outline: none;
             border-color: var(--primary-orange);
-            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+            box-shadow: 0 0 0 3px rgba(204, 163, 0, 0.1);
           }
 
           &.error {
