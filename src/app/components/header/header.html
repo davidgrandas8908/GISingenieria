@@ -1,12 +1,12 @@
 <header class="header">
   <div class="container">
-    <div class="logo" routerLink="/home">
+    <div class="logo" routerLink="/">
       <h1>GIS Ingeniería</h1>
       <span class="tagline">& Soluciones</span>
     </div>
     
     <nav class="nav" [class.active]="isMenuOpen">
-      <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Inicio</a>
       <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>
       <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Servicios</a>
       <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
