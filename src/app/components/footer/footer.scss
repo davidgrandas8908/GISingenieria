@@ -68,6 +68,33 @@
       opacity: 0.9;
     }
 
+    .appointment-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--primary-orange), #ff6b35);
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+      border: 2px solid transparent;
+
+      &:hover {
+        background: linear-gradient(135deg, #ff6b35, var(--primary-orange));
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+        color: white;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
     .footer-links {
       list-style: none;
       padding: 0;
@@ -192,6 +219,11 @@
       h3 {
         font-size: 1.3rem;
       }
+
+      .appointment-btn {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.9rem;
+      }
     }
   }
 }
@@ -207,6 +239,11 @@
     .footer-section {
       h3 {
         font-size: 1.2rem;
+      }
+
+      .appointment-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
       }
     }
   }
