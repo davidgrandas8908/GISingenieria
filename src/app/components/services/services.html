@@ -6,7 +6,7 @@
     </div>
 
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card clickable" (click)="openImpermeabilizacionPopup()">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -21,6 +21,12 @@
             <li>Control riguroso de calidad</li>
             <li>Protección integral de estructuras</li>
           </ul>
+          <div class="click-hint">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+            </svg>
+            <span>Haz clic para ver galería</span>
+          </div>
         </div>
       </div>
 
@@ -95,6 +101,53 @@
           </svg>
           📅 Agendar Cita
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup del Carrusel de Impermeabilización -->
+  <div class="popup-overlay" [class.show]="showImpermeabilizacionPopup" (click)="closeImpermeabilizacionPopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>Impermeabilización de Fachadas y Cubiertas</h3>
+        <button class="close-btn" (click)="closeImpermeabilizacionPopup()">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-wrapper" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+          <div class="carousel-slide" *ngFor="let image of impermeabilizacionImages; let i = index">
+            <img [src]="image.url" [alt]="image.alt" loading="lazy">
+            <div class="slide-caption">
+              <h4>{{ image.title }}</h4>
+              <p>{{ image.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn prev" (click)="previousSlide()" [disabled]="currentSlide === 0">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        
+        <button class="carousel-btn next" (click)="nextSlide()" [disabled]="currentSlide === impermeabilizacionImages.length - 1">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+        
+        <div class="carousel-indicators">
+          <button 
+            *ngFor="let image of impermeabilizacionImages; let i = index" 
+            class="indicator" 
+            [class.active]="i === currentSlide"
+            (click)="goToSlide(i)">
+          </button>
+        </div>
       </div>
     </div>
   </div>
