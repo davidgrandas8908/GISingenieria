@@ -97,11 +97,11 @@ export class AppointmentComponent implements OnInit {
       description: `Cliente: ${formData.name}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\nServicio: ${formData.service}\nDescripción: ${formData.description || 'Sin descripción adicional'}`,
       start: {
         dateTime: startDate.toISOString(),
-        timeZone: 'America/Mexico_City'
+        timeZone: 'America/Bogota'
       },
       end: {
         dateTime: endDate.toISOString(),
-        timeZone: 'America/Mexico_City'
+        timeZone: 'America/Bogota'
       },
       attendees: [
         { email: 'contacto.ingenieriagis@gmail.com' },

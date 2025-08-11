@@ -41,10 +41,12 @@ export class CalendarService {
       details: event.description,
       location: 'GIS Ingeniería & Soluciones',
       sf: 'true',
-      output: 'xml'
+      output: 'xml',
+      ctz: 'America/Bogota'
     });
 
-    return `https://calendar.google.com/calendar/render?${params.toString()}`;
+    // Usar el calendario de la empresa (contacto.ingenieriagis@gmail.com)
+    return `https://calendar.google.com/calendar/u/contacto.ingenieriagis@gmail.com/render?${params.toString()}`;
   }
 
   /**
