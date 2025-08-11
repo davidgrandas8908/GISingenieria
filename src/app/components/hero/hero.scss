@@ -231,6 +231,15 @@
   }
 }
 
+// Media query para dispositivos móviles - corregir franja blanca
+@media (max-width: 768px) {
+  .hero {
+    &::before {
+      background-attachment: scroll;
+    }
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
