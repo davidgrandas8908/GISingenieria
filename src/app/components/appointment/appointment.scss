@@ -1,6 +1,6 @@
 .appointment-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-white) 100%);
+  background: var(--primary-white);
   min-height: 100vh;
   position: relative;
 
@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 51, 53, 0.05), rgba(204, 163, 0, 0.05));
+    background: rgba(204, 163, 0, 0.05);
     z-index: 0;
   }
 
@@ -32,7 +32,7 @@
       font-weight: 800;
       color: var(--primary-dark);
       margin-bottom: 1rem;
-      background: var(--gradient-primary);
+      background: #cca300;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -94,7 +94,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: var(--gradient-primary);
+        background: #cca300;
         transform: scaleX(0);
         transition: transform 0.3s ease;
       }
@@ -111,7 +111,7 @@
       .icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        background: var(--gradient-primary);
+        background: #cca300;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -215,7 +215,7 @@
         margin-top: 2rem;
 
         .btn-primary {
-          background: var(--gradient-primary);
+          background: #cca300;
           color: var(--primary-white);
           border: none;
           padding: 1rem 2.5rem;
@@ -288,7 +288,7 @@
         }
 
         .success-message {
-          background: linear-gradient(135deg, #d4edda, #c3e6cb);
+          background: #d4edda;
           border: 1px solid #c3e6cb;
           color: #155724;
 
@@ -298,7 +298,7 @@
         }
 
         .error-message {
-          background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+          background: #f8d7da;
           border: 1px solid #f5c6cb;
           color: #721c24;
 
@@ -325,7 +325,7 @@
         font-weight: 700;
         color: var(--primary-dark);
         margin-bottom: 1rem;
-        background: var(--gradient-primary);
+        background: #cca300;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;

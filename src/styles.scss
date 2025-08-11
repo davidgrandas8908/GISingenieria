@@ -3,16 +3,18 @@
   --primary-orange: #cca300;
   --primary-blue: #3498DB;
   --primary-green: #083335;
-  --primary-white: #FFFFFF;
-  --primary-gray: #ECF0F1;
-  --primary-dark: #2C3E50;
-  --primary-brown: #8B4513;
-  --primary-black: #1A1A1A;
-  --gradient-primary: linear-gradient(135deg, var(--primary-orange), var(--primary-blue));
-  --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
+  --primary-dark: #2c3e50;
+  --primary-gray: #f8f9fa;
+  --primary-white: #ffffff;
+
+  /* Gradientes reemplazados por color sólido */
+  --gradient-primary: #cca300;
+  --gradient-secondary: #cca300;
+
+  /* Sombras */
   --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 * {

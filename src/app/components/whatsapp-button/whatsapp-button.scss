@@ -1,135 +1,44 @@
 .whatsapp-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  background: #cca300;
   color: white;
   border: none;
-  border-radius: 50px;
-  padding: 15px 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 600;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
+  transition: all 0.3s ease;
   text-decoration: none;
-  min-width: 60px;
-  height: 60px;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-    background: linear-gradient(135deg, #128c7e, #075e54);
+    background: #d4b800;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(204, 163, 0, 0.4);
   }
 
-  &:active {
-    transform: translateY(0);
-  }
-
-  .whatsapp-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  svg {
     width: 30px;
     height: 30px;
-    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 55px;
+    height: 55px;
 
     svg {
-      width: 100%;
-      height: 100%;
+      width: 28px;
+      height: 28px;
     }
   }
-
-  .whatsapp-text {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-    overflow: hidden;
-    max-width: 0;
-  }
-
-  &:hover .whatsapp-text {
-    opacity: 1;
-    transform: translateX(0);
-    max-width: 100px;
-  }
-
-  // Animación de pulso
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50px;
-    background: rgba(37, 211, 102, 0.3);
-    animation: pulse 2s infinite;
-    z-index: -1;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-// Responsive design
-@media (max-width: 768px) {
-  .whatsapp-button {
-    bottom: 15px;
-    right: 15px;
-    padding: 12px 15px;
-    min-width: 50px;
-    height: 50px;
-
-    .whatsapp-icon {
-      width: 25px;
-      height: 25px;
-    }
-
-    .whatsapp-text {
-      display: none; // Ocultar texto en móviles para ahorrar espacio
-    }
-
-    &:hover .whatsapp-text {
-      display: none;
-    }
-  }
-}
-
-// Animación de entrada
-@keyframes slideIn {
-  from {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.whatsapp-button {
-  animation: slideIn 0.5s ease-out;
 }
 
 

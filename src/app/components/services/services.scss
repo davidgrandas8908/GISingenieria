@@ -1,6 +1,6 @@
 .services {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-white) 100%);
+  background: var(--primary-white);
   position: relative;
 
   &::before {
@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 51, 53, 0.05), rgba(204, 163, 0, 0.05));
+    background: rgba(204, 163, 0, 0.05);
     z-index: 0;
   }
 
@@ -28,7 +28,7 @@
       color: var(--primary-dark);
       margin-bottom: 1rem;
       font-weight: 800;
-      background: var(--gradient-primary);
+      background: #cca300;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -88,7 +88,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: var(--gradient-primary);
+      background: #cca300;
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
@@ -100,7 +100,7 @@
     .service-icon {
       width: 80px;
       height: 80px;
-      background: var(--gradient-primary);
+      background: #cca300;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -156,7 +156,7 @@
     text-align: center;
     margin-top: 4rem;
     padding: 3rem;
-    background: var(--gradient-secondary);
+    background: #cca300;
     border-radius: 20px;
     color: var(--primary-white);
     box-shadow: var(--shadow-medium);
@@ -211,12 +211,12 @@
       }
 
       &.appointment {
-        background: linear-gradient(135deg, var(--primary-orange), #d4b800);
+        background: #cca300;
         box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
         animation: pulse 2s infinite;
 
         &:hover {
-          background: linear-gradient(135deg, #d4b800, var(--primary-orange));
+          background: #d4b800;
           box-shadow: 0 6px 20px rgba(204, 163, 0, 0.4);
           animation: none;
         }

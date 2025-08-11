@@ -1,5 +1,5 @@
 .footer {
-  background: var(--gradient-secondary);
+  background: #cca300;
   color: var(--primary-white);
   padding: 4rem 0 2rem;
   position: relative;
@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 51, 53, 0.95), rgba(44, 62, 80, 0.95));
+    background: rgba(8, 51, 53, 0.95);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -70,7 +70,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, var(--primary-orange), #d4b800);
+      background: #cca300;
       color: white;
       text-decoration: none;
       padding: 0.8rem 1.5rem;
@@ -81,7 +81,7 @@
       border: 2px solid transparent;
 
       &:hover {
-        background: linear-gradient(135deg, #d4b800, var(--primary-orange));
+        background: #d4b800;
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(204, 163, 0, 0.4);
         color: white;
