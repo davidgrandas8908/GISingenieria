@@ -1,9 +1,14 @@
 .appointment-section {
-  padding: 5rem 0;
-  background: var(--primary-white);
-  min-height: 100vh;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-white);
+  overflow: hidden;
 
+  // Imagen de fondo con overlay
   &::before {
     content: '';
     position: absolute;
@@ -11,31 +16,50 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(204, 163, 0, 0.05);
-    z-index: 0;
+    background: 
+      linear-gradient(135deg, rgba(8, 51, 53, 0.95), rgba(8, 51, 53, 0.9)),
+      url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+  }
+
+  // Efecto de color adicional
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(204, 163, 0, 0.1);
+    z-index: -1;
   }
 
   .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 20px;
   }
 
   .section-header {
     text-align: center;
     margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out;
 
     h2 {
       font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary-dark);
+      color: var(--primary-white);
       margin-bottom: 1rem;
+      font-weight: 800;
       background: #cca300;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
       @media (max-width: 768px) {
         font-size: 2.5rem;
@@ -48,11 +72,12 @@
 
     p {
       font-size: 1.2rem;
-      color: var(--primary-dark);
+      color: var(--primary-gray);
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
-      opacity: 0.8;
+      opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
       @media (max-width: 768px) {
         font-size: 1.1rem;
@@ -60,11 +85,12 @@
     }
   }
 
-  .appointment-container {
+  .appointment-content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.2s both;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -72,354 +98,246 @@
     }
   }
 
-  .appointment-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
+  .info-section {
     .info-card {
-      background: var(--primary-white);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 20px;
-      box-shadow: var(--shadow-light);
-      border: 1px solid rgba(8, 51, 53, 0.1);
-      position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 1.5rem;
       transition: all 0.3s ease;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: #cca300;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      &:hover::before {
-        transform: scaleX(1);
-      }
+      text-align: left;
 
       &:hover {
         transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
         box-shadow: var(--shadow-medium);
       }
 
-      .icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+      .info-icon {
+        width: 60px;
+        height: 60px;
         background: #cca300;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+
+        svg {
+          width: 30px;
+          height: 30px;
+          color: var(--primary-white);
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: var(--shadow-medium);
+        }
       }
 
       h3 {
         font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--primary-dark);
-        margin-bottom: 0.8rem;
+        color: var(--primary-white);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       }
 
       p {
-        color: var(--primary-dark);
-        margin: 0.25rem 0;
-        font-size: 1rem;
-        opacity: 0.8;
-        line-height: 1.5;
+        color: var(--primary-gray);
+        line-height: 1.6;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       }
     }
   }
 
-  .appointment-form-container {
-    background: var(--primary-white);
+  .appointment-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: var(--shadow-medium);
-    border: 1px solid rgba(8, 51, 53, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out 0.4s both;
 
-    .appointment-form {
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
-
-        @media (max-width: 768px) {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-
-        &.full-width {
-          grid-column: 1 / -1;
-        }
-
-        label {
-          display: block;
-          margin-bottom: 0.5rem;
-          font-weight: 600;
-          color: var(--primary-dark);
-          font-size: 1rem;
-        }
-
-        input, select, textarea {
-          width: 100%;
-          padding: 0.75rem 1rem;
-          border: 2px solid var(--primary-gray);
-          border-radius: 12px;
-          font-size: 1rem;
-          transition: all 0.3s ease;
-          background: var(--primary-white);
-
-          &:focus {
-            outline: none;
-            border-color: var(--primary-orange);
-            box-shadow: 0 0 0 3px rgba(204, 163, 0, 0.1);
-          }
-
-          &.error {
-            border-color: #e74c3c;
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
-          }
-        }
-
-        textarea {
-          resize: vertical;
-          min-height: 120px;
-        }
-
-        .error-message {
-          color: #e74c3c;
-          font-size: 0.875rem;
-          margin-top: 0.5rem;
-          font-weight: 500;
-        }
-
-        .char-count {
-          text-align: right;
-          font-size: 0.875rem;
-          color: var(--primary-dark);
-          margin-top: 0.5rem;
-          opacity: 0.6;
-        }
-      }
-
-      .form-actions {
-        text-align: center;
-        margin-top: 2rem;
-
-        .btn-primary {
-          background: #cca300;
-          color: var(--primary-white);
-          border: none;
-          padding: 1rem 2.5rem;
-          border-radius: 50px;
-          font-size: 1.1rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: var(--shadow-medium);
-          min-width: 200px;
-
-          &:hover:not(:disabled) {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-heavy);
-          }
-
-          &:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-          }
-        }
-      }
-
-      .form-messages {
-        margin-top: 2rem;
-
-        .success-message, .error-message {
-          display: flex;
-          align-items: flex-start;
-          gap: 1rem;
-          padding: 1.5rem;
-          border-radius: 16px;
-          box-shadow: var(--shadow-light);
-
-          .message-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-          }
-
-          .message-content {
-            h4 {
-              margin: 0 0 0.5rem 0;
-              font-size: 1.2rem;
-              font-weight: 700;
-            }
-
-            p {
-              margin: 0 0 1rem 0;
-              opacity: 0.8;
-              line-height: 1.5;
-            }
-
-            .btn-secondary {
-              background: var(--primary-dark);
-              color: var(--primary-white);
-              border: none;
-              padding: 0.75rem 1.5rem;
-              border-radius: 25px;
-              cursor: pointer;
-              font-weight: 600;
-              transition: all 0.3s ease;
-
-              &:hover {
-                background: var(--primary-orange);
-                transform: translateY(-2px);
-              }
-            }
-          }
-        }
-
-        .success-message {
-          background: #d4edda;
-          border: 1px solid #c3e6cb;
-          color: #155724;
-
-          .message-content h4 {
-            color: #155724;
-          }
-        }
-
-        .error-message {
-          background: #f8d7da;
-          border: 1px solid #f5c6cb;
-          color: #721c24;
-
-          .message-content h4 {
-            color: #721c24;
-          }
-        }
-      }
-    }
-  }
-
-  .calendar-integration {
-    background: var(--primary-white);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow-light);
-    border: 1px solid rgba(8, 51, 53, 0.1);
-
-    .integration-info {
+    .form-header {
       text-align: center;
+      margin-bottom: 2rem;
 
       h3 {
         font-size: 1.8rem;
+        color: var(--primary-white);
+        margin-bottom: 0.5rem;
         font-weight: 700;
-        color: var(--primary-dark);
-        margin-bottom: 1rem;
         background: #cca300;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
 
       p {
-        color: var(--primary-dark);
-        margin-bottom: 2rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-        opacity: 0.8;
-        font-size: 1.1rem;
+        color: var(--primary-gray);
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        color: var(--primary-white);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       }
 
-      .integration-features {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
+      input, textarea, select {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--primary-white);
+        font-size: 1rem;
+        transition: all 0.3s ease;
 
-        .feature {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
-          padding: 1rem 1.5rem;
-          background: var(--primary-gray);
-          border-radius: 25px;
-          border: 1px solid rgba(8, 51, 53, 0.1);
-          transition: all 0.3s ease;
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
 
-          &:hover {
-            background: var(--primary-orange);
-            color: var(--primary-white);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-          }
+        &:focus {
+          outline: none;
+          border-color: var(--primary-orange);
+          background: rgba(255, 255, 255, 0.15);
+          box-shadow: 0 0 0 3px rgba(204, 163, 0, 0.2);
+        }
+      }
 
-          .feature-icon {
-            font-size: 1.3rem;
-          }
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+    }
 
-          span:last-child {
-            font-weight: 600;
-            color: var(--primary-dark);
-            font-size: 1rem;
+    .form-actions {
+      text-align: center;
 
-            .feature:hover & {
-              color: var(--primary-white);
-            }
-          }
+      .btn-primary {
+        background: #cca300;
+        color: var(--primary-white);
+        border: none;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 200px;
+
+        &:hover {
+          background: #d4b800;
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-medium);
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+          transform: none;
         }
       }
     }
+
+    .form-messages {
+      margin-top: 1.5rem;
+
+      .success-message {
+        background: rgba(40, 167, 69, 0.2);
+        color: #d4edda;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid rgba(40, 167, 69, 0.3);
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .error-message {
+        background: rgba(220, 53, 69, 0.2);
+        color: #f8d7da;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid rgba(220, 53, 69, 0.3);
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+    }
   }
-}
 
-@media (max-width: 768px) {
-  .appointment-section {
-    padding: 3rem 0;
+  .faq-section {
+    animation: fadeInUp 1s ease-out 0.6s both;
 
-    .section-header h2 {
-      font-size: 2.5rem;
+    h3 {
+      font-size: 2rem;
+      color: var(--primary-white);
+      margin-bottom: 2rem;
+      font-weight: 700;
+      background: #cca300;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
     }
 
-    .appointment-form-container {
-      padding: 2rem;
-    }
+    .faq-item {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
 
-    .calendar-integration {
-      padding: 2rem;
+      &:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: var(--shadow-medium);
+      }
 
-      .integration-features {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+      .faq-question {
+        font-size: 1.1rem;
+        color: var(--primary-white);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .faq-answer {
+        color: var(--primary-gray);
+        line-height: 1.6;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       }
     }
   }
 }
 
-@media (max-width: 480px) {
-  .appointment-section {
-    .container {
-      padding: 0 1rem;
-    }
-
-    .appointment-form-container {
-      padding: 1.5rem;
-    }
-
-    .calendar-integration {
-      padding: 1.5rem;
-    }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
