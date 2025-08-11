@@ -22,6 +22,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     z-index: -2;
   }
 
@@ -231,11 +232,39 @@
   }
 }
 
-// Media query para dispositivos móviles - corregir franja blanca
+// Media query para dispositivos móviles - solución agresiva para franja blanca
 @media (max-width: 768px) {
   .hero {
+    min-height: 100vh;
+    height: 100vh;
+    
     &::before {
       background-attachment: scroll;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+    
+    &::after {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Media query adicional para pantallas muy pequeñas
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100vh;
+    height: 100vh;
+    
+    &::before {
+      background-attachment: scroll;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 }
