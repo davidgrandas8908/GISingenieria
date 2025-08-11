@@ -1,8 +1,14 @@
 .about {
-  padding: 5rem 0;
-  background: var(--primary-white);
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-white);
+  overflow: hidden;
 
+  // Imagen de fondo con overlay
   &::before {
     content: '';
     position: absolute;
@@ -10,28 +16,50 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(204, 163, 0, 0.05);
-    z-index: 0;
+    background: 
+      linear-gradient(135deg, rgba(8, 51, 53, 0.95), rgba(8, 51, 53, 0.9)),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+  }
+
+  // Efecto de color adicional
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(204, 163, 0, 0.1);
+    z-index: -1;
   }
 
   .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .section-header {
     text-align: center;
     margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out;
 
     h2 {
       font-size: 3rem;
-      color: var(--primary-dark);
+      color: var(--primary-white);
       margin-bottom: 1rem;
       font-weight: 800;
       background: #cca300;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
       @media (max-width: 768px) {
         font-size: 2.5rem;
@@ -44,11 +72,12 @@
 
     p {
       font-size: 1.2rem;
-      color: var(--primary-dark);
+      color: var(--primary-gray);
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
-      opacity: 0.8;
+      opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
       @media (max-width: 768px) {
         font-size: 1.1rem;
@@ -61,6 +90,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.2s both;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -74,10 +104,11 @@
 
       h3 {
         font-size: 1.5rem;
-        color: var(--primary-dark);
+        color: var(--primary-white);
         margin-bottom: 1rem;
         font-weight: 700;
         position: relative;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
         &::after {
           content: '';
@@ -92,18 +123,21 @@
       }
 
       p {
-        color: var(--primary-dark);
+        color: var(--primary-gray);
         line-height: 1.6;
         margin-bottom: 1rem;
-        opacity: 0.8;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       }
     }
   }
 
   .about-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
 
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
@@ -112,122 +146,144 @@
 
     @media (max-width: 480px) {
       grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     .stat-card {
-      background: var(--primary-white);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: var(--shadow-light);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
       text-align: center;
-      border: 1px solid rgba(8, 51, 53, 0.1);
+
+      &:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: var(--shadow-medium);
+      }
 
       .stat-icon {
         width: 60px;
         height: 60px;
         background: #cca300;
-        border-radius: 15px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 1.5rem;
+        margin: 0 auto 1rem;
+        transition: all 0.3s ease;
 
         svg {
           width: 30px;
           height: 30px;
           color: var(--primary-white);
         }
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: var(--shadow-medium);
+        }
       }
 
-      h4 {
-        font-size: 1.3rem;
-        color: var(--primary-dark);
-        margin-bottom: 1rem;
-        font-weight: 600;
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-orange);
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
       }
 
-      p {
-        color: var(--primary-dark);
-        opacity: 0.8;
-        line-height: 1.5;
-        margin: 0;
+      .stat-label {
+        font-size: 1rem;
+        color: var(--primary-gray);
+        font-weight: 500;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+        }
       }
     }
   }
 
   .certifications {
-    text-align: center;
-    margin-top: 4rem;
-    padding: 3rem;
-    background: #cca300;
+    background: rgba(204, 163, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 3rem 2rem;
     border-radius: 20px;
-    color: var(--primary-white);
-    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.6s both;
 
     h3 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: var(--primary-white);
+      margin-bottom: 2rem;
       font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
       @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
     }
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     .cert-grid {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
 
       .cert-item {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 1rem 1.5rem;
-        border-radius: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        font-weight: 600;
-        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
 
-        @media (max-width: 768px) {
-          padding: 0.8rem 1.2rem;
-          font-size: 0.85rem;
+        &:hover {
+          transform: translateY(-3px);
+          background: rgba(255, 255, 255, 0.15);
+          box-shadow: var(--shadow-medium);
+        }
+
+        h4 {
+          color: var(--primary-orange);
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+          color: var(--primary-gray);
+          font-size: 0.9rem;
+          line-height: 1.5;
+          opacity: 0.9;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
       }
     }
   }
 }
 
-@media (max-width: 768px) {
-  .about {
-    padding: 3rem 0;
-
-    .section-header h2 {
-      font-size: 2.5rem;
-    }
-
-    .certifications {
-      padding: 2rem;
-    }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 480px) {
-  .about {
-    .container {
-      padding: 0 1rem;
-    }
-
-    .certifications {
-      padding: 1.5rem;
-    }
-  }
-}
