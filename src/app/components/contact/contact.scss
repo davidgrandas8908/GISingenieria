@@ -260,6 +260,38 @@
       }
     }
 
+    .btn-submit {
+      background: #cca300;
+      color: var(--primary-white);
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 200px;
+      margin-top: 1rem;
+
+      &:hover {
+        background: #d4b800;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-medium);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      @media (max-width: 768px) {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        min-width: 180px;
+      }
+    }
+
     .form-messages {
       margin-top: 1.5rem;
 
