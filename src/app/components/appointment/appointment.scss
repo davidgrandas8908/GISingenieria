@@ -52,10 +52,13 @@
 
     h2 {
       font-size: 3rem;
-      font-weight: 400;
-      font-family: 'Squada One', cursive;
-      color: #cca300;
+      color: var(--primary-white);
       margin-bottom: 1rem;
+      font-weight: 800;
+      background: #cca300;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
       @media (max-width: 768px) {
