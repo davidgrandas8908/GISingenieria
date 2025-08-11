@@ -104,7 +104,7 @@ export class AppointmentComponent implements OnInit {
         timeZone: 'America/Mexico_City'
       },
       attendees: [
-        { email: 'ricardos.gc123@gmail.com' },
+        { email: 'contacto.ingenieriagis@gmail.com' },
         { email: formData.email }
       ],
       reminders: {

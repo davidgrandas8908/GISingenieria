@@ -73,7 +73,7 @@ export class CalendarService {
    * @param formData Datos del formulario
    * @param recipientEmail Email del destinatario
    */
-  sendConfirmationEmail(formData: any, recipientEmail: string = 'ricardos.gc123@gmail.com'): void {
+  sendConfirmationEmail(formData: any, recipientEmail: string = 'contacto.ingenieriagis@gmail.com'): void {
     const subject = encodeURIComponent('Confirmación de Cita - GIS Ingeniería');
     const body = encodeURIComponent(this.createEmailBody(formData));
     
