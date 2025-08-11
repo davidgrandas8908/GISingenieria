@@ -142,15 +142,14 @@
         }
 
         &.btn-secondary {
-          background: #cca300;
+          background: transparent;
           color: var(--primary-white);
-          border-color: #cca300;
+          border-color: var(--primary-white);
 
           &:hover {
-            background: #d4b800;
-            color: var(--primary-white);
+            background: var(--primary-white);
+            color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-medium);
           }
         }
 
