@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface CarouselImage {
   url: string;
@@ -16,6 +17,8 @@ interface CarouselImage {
   styleUrl: './services.scss'
 })
 export class ServicesComponent {
+  constructor(private router: Router) {}
+
   // Impermeabilización
   showImpermeabilizacionPopup = false;
   currentSlide = 0;
@@ -376,5 +379,10 @@ export class ServicesComponent {
 
   goToSlideIncendios(index: number) {
     this.currentSlideIncendios = index;
+  }
+
+  // Método para navegar a la página de citas
+  navigateToAppointment() {
+    this.router.navigate(['/appointment']);
   }
 }

@@ -238,6 +238,8 @@
         gap: 0.5rem;
         min-width: 200px;
         justify-content: center;
+        cursor: pointer;
+        font-family: inherit;
 
         &.primary {
           background: #cca300;
