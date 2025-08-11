@@ -8,7 +8,7 @@
   color: var(--primary-white);
   overflow: hidden;
 
-  // Imagen de fondo con overlay verde
+  // Imagen de fondo con overlay
   &::before {
     content: '';
     position: absolute;
@@ -16,7 +16,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(8, 51, 53, 0.9);
+    background: 
+      linear-gradient(135deg, rgba(8, 51, 53, 0.8), rgba(8, 51, 53, 0.7)),
+      url('https://drive.google.com/uc?export=view&id=17J8nwQJXjMa9SlIlA1RS8hLc1rHlurHS');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
