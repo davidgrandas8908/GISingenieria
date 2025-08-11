@@ -10,10 +10,9 @@
       <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>
       <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Servicios</a>
       <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
-      <a routerLink="/appointment" routerLinkActive="active" (click)="closeMenu()" class="appointment-link">📅 Agendar Cita</a>
     </nav>
-    
-    <div class="mobile-menu-toggle" [class.active]="isMenuOpen" (click)="toggleMenu()">
+
+    <div class="menu-toggle" [class.active]="isMenuOpen" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>

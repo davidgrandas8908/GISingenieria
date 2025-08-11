@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(8, 51, 53, 0.9);
+    background: rgba(131, 51, 53, 0.9);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -128,14 +128,14 @@
         justify-content: center;
 
         &.btn-primary {
-          background: #cca300;
+          background: transparent;
           color: var(--primary-white);
-          box-shadow: var(--shadow-medium);
+          border-color: var(--primary-white);
 
           &:hover {
+            background: var(--primary-white);
+            color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-heavy);
-            border-color: var(--primary-orange);
           }
         }
 
@@ -152,17 +152,14 @@
         }
 
         &.btn-appointment {
-          background: #cca300;
-          color: white;
-          box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
-          border: 2px solid transparent;
-          animation: pulse 2s infinite;
+          background: transparent;
+          color: var(--primary-white);
+          border-color: var(--primary-white);
 
           &:hover {
-            background: #d4b800;
+            background: var(--primary-white);
+            color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(204, 163, 0, 0.4);
-            animation: none;
           }
         }
 
@@ -301,17 +298,5 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
-  }
-  50% {
-    box-shadow: 0 4px 20px rgba(204, 163, 0, 0.5);
-  }
-  100% {
-    box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
   }
 }

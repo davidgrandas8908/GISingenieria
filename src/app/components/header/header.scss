@@ -121,41 +121,6 @@
         color: var(--primary-orange);
       }
 
-      &.appointment-link {
-        background: #cca300;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 25px;
-        box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-
-        &::after {
-          display: none;
-        }
-
-        &:hover {
-          background: #d4b800;
-          transform: translateY(-3px);
-          box-shadow: 0 6px 20px rgba(204, 163, 0, 0.4);
-          color: white;
-        }
-
-        @media (max-width: 768px) {
-          background: #cca300;
-          color: white;
-          padding: 1rem 2rem;
-          border-radius: 25px;
-          box-shadow: 0 4px 15px rgba(204, 163, 0, 0.3);
-
-          &:hover {
-            background: #d4b800;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(204, 163, 0, 0.4);
-          }
-        }
-      }
-
       @media (max-width: 768px) {
         font-size: 1.1rem;
         padding: 0.75rem 0;
