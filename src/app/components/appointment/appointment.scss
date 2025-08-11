@@ -219,6 +219,34 @@
         }
       }
 
+      // Estilos específicos para select y sus opciones
+      select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1.2em;
+        padding-right: 2.5rem;
+
+        option {
+          background-color: #00343d;
+          color: var(--primary-white);
+          padding: 0.5rem;
+          font-size: 1rem;
+          
+          &:hover {
+            background-color: #cca300;
+            color: var(--primary-white);
+          }
+        }
+
+        &:focus option {
+          background-color: #cca300;
+          color: var(--primary-white);
+        }
+      }
+
       textarea {
         resize: vertical;
         min-height: 120px;
@@ -339,5 +367,33 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Estilos globales para select en el componente de citas
+.appointment-section {
+  select {
+    // Asegurar que las opciones sean visibles en todos los navegadores
+    option {
+      background-color: #00343d !important;
+      color: #ffffff !important;
+      font-weight: 500;
+      
+      &:checked {
+        background-color: #cca300 !important;
+        color: #ffffff !important;
+      }
+    }
+    
+    // Para Firefox
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #ffffff;
+    }
+    
+    // Para Safari y Chrome
+    &::-ms-expand {
+      display: none;
+    }
   }
 }
