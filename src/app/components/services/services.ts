@@ -34,10 +34,52 @@ export class ServicesComponent {
       description: 'Sistemas avanzados para la protección de techos y azoteas'
     },
     {
-      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen10.jpg',
-      alt: 'Trabajos de impermeabilización',
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen3.jpeg',
+      alt: 'Aplicación de impermeabilizante',
+      title: 'Aplicación Profesional',
+      description: 'Técnicas especializadas de aplicación de impermeabilizantes'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen4.jpeg',
+      alt: 'Protección de superficies',
+      title: 'Protección de Superficies',
+      description: 'Protección integral de diferentes tipos de superficies'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen5.jpg',
+      alt: 'Trabajos especializados',
       title: 'Trabajos Especializados',
       description: 'Aplicación profesional con materiales de alta calidad'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen6.webp',
+      alt: 'Sistemas avanzados',
+      title: 'Sistemas Avanzados',
+      description: 'Implementación de sistemas modernos de impermeabilización'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen7.jpg',
+      alt: 'Control de calidad',
+      title: 'Control de Calidad',
+      description: 'Supervisión y control de calidad en todos los procesos'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen8.jpeg',
+      alt: 'Resultados duraderos',
+      title: 'Resultados Duraderos',
+      description: 'Garantía de protección a largo plazo para su propiedad'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen9.webp',
+      alt: 'Mantenimiento preventivo',
+      title: 'Mantenimiento Preventivo',
+      description: 'Servicios de mantenimiento y revisión de sistemas'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen10.jpg',
+      alt: 'Proyectos completados',
+      title: 'Proyectos Completados',
+      description: 'Portafolio de proyectos exitosos de impermeabilización'
     }
   ];
 
@@ -205,10 +247,22 @@ export class ServicesComponent {
       description: 'Realización de pruebas y certificación de sistemas'
     },
     {
-      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen10.jpeg',
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen8.jpeg',
+      alt: 'Pruebas y certificación',
+      title: 'Pruebas y Certificación',
+      description: 'Realización de pruebas y certificación de sistemas'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen9.jpeg',
       alt: 'Mantenimiento preventivo',
       title: 'Mantenimiento Preventivo',
       description: 'Servicios de mantenimiento y revisión de sistemas'
+    },
+    {
+      url: 'https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen10.jpeg',
+      alt: 'Proyectos completados',
+      title: 'Proyectos Completados',
+      description: 'Portafolio de proyectos exitosos de sistemas contra incendios'
     }
   ];
 
