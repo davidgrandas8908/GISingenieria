@@ -444,11 +444,19 @@
         .section-logo {
           margin-bottom: 1.5rem;
           
-          .section-logo-image {
+                  .section-logo-image {
+          height: 60px;
+          width: auto;
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+          
+          @media (max-width: 768px) {
             height: 50px;
-            width: auto;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
           }
+
+          @media (max-width: 480px) {
+            height: 45px;
+          }
+        }
         }
 
         h2 {

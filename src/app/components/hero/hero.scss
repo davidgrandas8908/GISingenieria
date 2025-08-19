@@ -65,12 +65,16 @@
       margin-bottom: 2rem;
       
       .hero-logo-image {
-        height: 80px;
+        height: 100px;
         width: auto;
         filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
         
         @media (max-width: 768px) {
-          height: 60px;
+          height: 80px;
+        }
+
+        @media (max-width: 480px) {
+          height: 70px;
         }
       }
     }
