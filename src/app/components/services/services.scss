@@ -410,10 +410,15 @@
         gap: 1rem;
 
         .section-logo {
+          display: flex;
+          align-items: center;
+          min-width: 40px;
+          
           .section-logo-image {
             height: 40px;
             width: auto;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            display: block;
             
             @media (max-width: 768px) {
               height: 35px;
