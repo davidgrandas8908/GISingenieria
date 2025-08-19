@@ -134,18 +134,12 @@
   <!-- Popup del Carrusel de Impermeabilización -->
   <div class="popup-overlay" [class.show]="showImpermeabilizacionPopup" (click)="closeImpermeabilizacionPopup()">
     <div class="popup-content" (click)="$event.stopPropagation()">
-      <div class="popup-header" style="background: red; padding: 20px; border: 3px solid blue;">
-        <div class="header-content" style="background: yellow; padding: 10px;">
-          <div class="section-logo" style="background: green; padding: 5px; color: white; font-weight: bold;">
-            <span>LOGO GIS</span>
+      <div class="popup-header">
+        <div class="header-content">
+          <div class="section-logo">
+            <img src="/logos/gis-logo-color.png" alt="GIS Ingeniería" class="section-logo-image">
           </div>
-          <h3 style="color: white; font-size: 24px; background: purple; padding: 10px;">GALERÍA DE IMPERMEABILIZACIÓN - DEBUG</h3>
-        </div>
-        <div style="background: orange; color: black; padding: 10px; font-weight: bold; font-size: 18px;">
-          ¡ESTE ES EL POPUP CORRECTO!
-        </div>
-        <div style="background: lime; color: black; padding: 10px; font-weight: bold; font-size: 20px; text-align: center;">
-          CAMBIO REALIZADO EL 19/08/2025
+          <h3>Galería de Impermeabilización</h3>
         </div>
         <button class="close-btn" (click)="closeImpermeabilizacionPopup()">
           <svg viewBox="0 0 24 24" fill="currentColor">
