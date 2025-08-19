@@ -387,9 +387,9 @@
   }
 
   .popup-content {
-    background: rgba(0, 52, 61, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     max-width: 90vw;
     max-height: 90vh;
@@ -402,10 +402,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
       h3 {
-        color: var(--primary-white);
+        color: #2c3e50;
         margin: 0;
         font-size: 1.5rem;
         font-weight: 600;
@@ -414,7 +414,7 @@
       .close-btn {
         background: none;
         border: none;
-        color: var(--primary-white);
+        color: #2c3e50;
         cursor: pointer;
         padding: 0.5rem;
         border-radius: 50%;
