@@ -404,11 +404,41 @@
       padding: 1.5rem 2rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-      h3 {
-        color: #2c3e50;
-        margin: 0;
-        font-size: 1.5rem;
-        font-weight: 600;
+      .header-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .section-logo {
+          .section-logo-image {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            
+            @media (max-width: 768px) {
+              height: 35px;
+            }
+
+            @media (max-width: 480px) {
+              height: 30px;
+            }
+          }
+        }
+
+        h3 {
+          color: #2c3e50;
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: 600;
+          
+          @media (max-width: 768px) {
+            font-size: 1.3rem;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1.1rem;
+          }
+        }
       }
 
       .close-btn {
