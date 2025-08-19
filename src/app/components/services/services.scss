@@ -412,13 +412,17 @@
         .section-logo {
           display: flex;
           align-items: center;
-          min-width: 40px;
+          min-width: 120px;
+          min-height: 40px;
+          background: rgba(255, 0, 0, 0.1);
+          border: 1px solid red;
           
           .section-logo-image {
             height: 40px;
             width: auto;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
             display: block;
+            border: 1px solid blue;
             
             @media (max-width: 768px) {
               height: 35px;
