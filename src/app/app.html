@@ -1,9 +1,14 @@
-<app-header></app-header>
+<app-header (openAppointmentPopup)="openAppointmentPopup()"></app-header>
 
 <main class="main-content">
-  <router-outlet />
+  <router-outlet (openAppointmentPopup)="openAppointmentPopup()" />
 </main>
 
 <app-footer></app-footer>
 
 <app-whatsapp-button></app-whatsapp-button>
+
+<app-appointment 
+  [showAppointmentPopup]="showAppointmentPopup" 
+  (closeAppointmentPopup)="closeAppointmentPopup()">
+</app-appointment>

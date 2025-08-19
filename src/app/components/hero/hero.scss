@@ -227,6 +227,19 @@
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
           }
         }
+
+        &.btn-appointment {
+          background: linear-gradient(135deg, #ff8c00, #ff6b35);
+          color: white;
+          border-color: #ff8c00;
+          box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+
+          &:hover {
+            background: linear-gradient(135deg, #ff6b35, #ff8c00);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 140, 0, 0.6);
+          }
+        }
       }
     }
   }

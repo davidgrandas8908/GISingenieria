@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.scss'
 })
 export class HeaderComponent {
+  @Output() openAppointmentPopup = new EventEmitter<void>();
+  
   isMenuOpen = false;
 
   toggleMenu() {
@@ -17,5 +19,9 @@ export class HeaderComponent {
 
   closeMenu() {
     this.isMenuOpen = false;
+  }
+
+  openAppointment() {
+    this.openAppointmentPopup.emit();
   }
 }

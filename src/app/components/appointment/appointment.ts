@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CalendarService, CalendarEvent } from '../../services/calendar.service';
@@ -11,6 +11,9 @@ import { CalendarService, CalendarEvent } from '../../services/calendar.service'
   styleUrl: './appointment.scss'
 })
 export class AppointmentComponent implements OnInit {
+  @Input() showAppointmentPopup: boolean = false;
+  @Output() closeAppointmentPopup = new EventEmitter<void>();
+
   appointmentForm: FormGroup;
   availableSlots: string[] = [];
   selectedDate: string = '';
@@ -56,6 +59,12 @@ export class AppointmentComponent implements OnInit {
   onTimeChange(event: any) {
     this.selectedTime = event.target.value;
     this.appointmentForm.patchValue({ time: this.selectedTime });
+  }
+
+  closePopup() {
+    this.closeAppointmentPopup.emit();
+    // Reset form when closing
+    this.resetForm();
   }
 
   async onSubmit() {
