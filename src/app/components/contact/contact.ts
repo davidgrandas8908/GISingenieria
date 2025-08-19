@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -10,10 +10,16 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact.scss'
 })
 export class ContactComponent {
+  @Output() openAppointmentPopup = new EventEmitter<void>();
+  
   isSubmitting = false;
   showSuccessMessage = false;
   showErrorMessage = false;
   errorMessage = '';
+
+  openAppointment() {
+    this.openAppointmentPopup.emit();
+  }
 
   async onSubmit(event: Event) {
     event.preventDefault();

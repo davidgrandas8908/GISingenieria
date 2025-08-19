@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -17,7 +17,13 @@ interface CarouselImage {
   styleUrl: './services.scss'
 })
 export class ServicesComponent {
+  @Output() openAppointmentPopup = new EventEmitter<void>();
+  
   constructor(private router: Router) {}
+
+  openAppointment() {
+    this.openAppointmentPopup.emit();
+  }
 
   // Impermeabilización
   showImpermeabilizacionPopup = false;
