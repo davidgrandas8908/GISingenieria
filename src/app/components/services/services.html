@@ -9,7 +9,7 @@
     </div>
 
     <div class="services-grid">
-      <div class="service-card" (click)="showImpermeabilizacionPopup = true">
+      <div class="service-card" (click)="openImpermeabilizacionPopup()">
         <div class="service-image">
           <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen1.jpeg" alt="Impermeabilización">
           <div class="service-overlay">
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="service-card" (click)="showObraCivilPopup = true">
+      <div class="service-card" (click)="openObraCivilPopup()">
         <div class="service-image">
           <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/obra-civil/imagen1.jpeg" alt="Obra Civil">
           <div class="service-overlay">
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div class="service-card" (click)="showInterioresPopup = true">
+      <div class="service-card" (click)="openInterioresPopup()">
         <div class="service-image">
           <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/interiores/imagen1.jpg" alt="Interiores">
           <div class="service-overlay">
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <div class="service-card" (click)="showIncendiosPopup = true">
+      <div class="service-card" (click)="openIncendiosPopup()">
         <div class="service-image">
           <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen1.jpeg" alt="Sistemas Contra Incendios">
           <div class="service-overlay">
@@ -316,6 +316,196 @@
           <button 
             *ngFor="let image of incendiosImages; let i = index" 
             class="indicator" 
+            [class.active]="i === currentSlideIncendios"
+            (click)="goToSlideIncendios(i)">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popups de servicios -->
+  
+  <!-- Popup Impermeabilización -->
+  <div class="popup-overlay" [class.show]="showImpermeabilizacionPopup" (click)="closeImpermeabilizacionPopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>Galería de Impermeabilización</h3>
+        <button class="close-btn" (click)="closeImpermeabilizacionPopup()">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-wrapper" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+          <div class="carousel-slide" *ngFor="let image of impermeabilizacionImages">
+            <img [src]="image.url" [alt]="image.alt">
+            <div class="slide-caption">
+              <h4>{{ image.title }}</h4>
+              <p>{{ image.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn prev" (click)="previousSlide()" [disabled]="currentSlide === 0">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        
+        <button class="carousel-btn next" (click)="nextSlide()" [disabled]="currentSlide === impermeabilizacionImages.length - 1">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+        
+        <div class="carousel-indicators">
+          <button 
+            class="indicator" 
+            *ngFor="let image of impermeabilizacionImages; let i = index"
+            [class.active]="i === currentSlide"
+            (click)="goToSlide(i)">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Obra Civil -->
+  <div class="popup-overlay" [class.show]="showObraCivilPopup" (click)="closeObraCivilPopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>Galería de Obra Civil</h3>
+        <button class="close-btn" (click)="closeObraCivilPopup()">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-wrapper" [style.transform]="'translateX(-' + (currentSlideObraCivil * 100) + '%)'">
+          <div class="carousel-slide" *ngFor="let image of obraCivilImages">
+            <img [src]="image.url" [alt]="image.alt">
+            <div class="slide-caption">
+              <h4>{{ image.title }}</h4>
+              <p>{{ image.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn prev" (click)="previousSlideObraCivil()" [disabled]="currentSlideObraCivil === 0">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        
+        <button class="carousel-btn next" (click)="nextSlideObraCivil()" [disabled]="currentSlideObraCivil === obraCivilImages.length - 1">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+        
+        <div class="carousel-indicators">
+          <button 
+            class="indicator" 
+            *ngFor="let image of obraCivilImages; let i = index"
+            [class.active]="i === currentSlideObraCivil"
+            (click)="goToSlideObraCivil(i)">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Interiores -->
+  <div class="popup-overlay" [class.show]="showInterioresPopup" (click)="closeInterioresPopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>Galería de Interiores</h3>
+        <button class="close-btn" (click)="closeInterioresPopup()">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-wrapper" [style.transform]="'translateX(-' + (currentSlideInteriores * 100) + '%)'">
+          <div class="carousel-slide" *ngFor="let image of interioresImages">
+            <img [src]="image.url" [alt]="image.alt">
+            <div class="slide-caption">
+              <h4>{{ image.title }}</h4>
+              <p>{{ image.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn prev" (click)="previousSlideInteriores()" [disabled]="currentSlideInteriores === 0">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        
+        <button class="carousel-btn next" (click)="nextSlideInteriores()" [disabled]="currentSlideInteriores === interioresImages.length - 1">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+        
+        <div class="carousel-indicators">
+          <button 
+            class="indicator" 
+            *ngFor="let image of interioresImages; let i = index"
+            [class.active]="i === currentSlideInteriores"
+            (click)="goToSlideInteriores(i)">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Incendios -->
+  <div class="popup-overlay" [class.show]="showIncendiosPopup" (click)="closeIncendiosPopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>Galería de Sistemas Contra Incendios</h3>
+        <button class="close-btn" (click)="closeIncendiosPopup()">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-wrapper" [style.transform]="'translateX(-' + (currentSlideIncendios * 100) + '%)'">
+          <div class="carousel-slide" *ngFor="let image of incendiosImages">
+            <img [src]="image.url" [alt]="image.alt">
+            <div class="slide-caption">
+              <h4>{{ image.title }}</h4>
+              <p>{{ image.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn prev" (click)="previousSlideIncendios()" [disabled]="currentSlideIncendios === 0">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        
+        <button class="carousel-btn next" (click)="nextSlideIncendios()" [disabled]="currentSlideIncendios === incendiosImages.length - 1">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+        
+        <div class="carousel-indicators">
+          <button 
+            class="indicator" 
+            *ngFor="let image of incendiosImages; let i = index"
             [class.active]="i === currentSlideIncendios"
             (click)="goToSlideIncendios(i)">
           </button>
