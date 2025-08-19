@@ -1,123 +1,189 @@
 <section class="contact">
   <div class="container">
     <div class="section-header">
+      <div class="section-logo">
+        <img src="/logos/gis-logo-color.png" alt="GIS Ingeniería" class="section-logo-image">
+      </div>
       <h2>Contáctanos</h2>
       <p>Somos el aliado que su propiedad horizontal necesita para proyectos que combinan excelencia técnica, eficiencia económica y un compromiso inquebrantable con la calidad.</p>
     </div>
 
-    <div class="contact-content">
-      <div class="contact-form">
-        <h3>Envíanos un Mensaje</h3>
-        
-        <!-- Mensaje de éxito -->
-        <div *ngIf="showSuccessMessage" class="alert alert-success">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-          <span>¡Mensaje enviado exitosamente! Te responderemos pronto.</span>
+    <div class="contact-hero">
+      <div class="contact-hero-content">
+        <div class="contact-hero-text">
+          <h3>¿Listo para Transformar su Propiedad?</h3>
+          <p>
+            Nuestros expertos están listos para asesorarlo en su próximo proyecto. 
+            Contáctenos hoy mismo y descubra cómo podemos proteger y valorizar su patrimonio.
+          </p>
+          <div class="contact-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <span>Respuesta en 24 horas</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <span>Consulta gratuita</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+              </div>
+              <span>Presupuesto personalizado</span>
+            </div>
+          </div>
         </div>
-
-        <!-- Mensaje de error -->
-        <div *ngIf="showErrorMessage" class="alert alert-error">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-          </svg>
-          <span>{{ errorMessage }}</span>
+        <div class="contact-hero-image">
+          <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen3.jpeg" alt="Contacto GIS Ingeniería">
         </div>
-
-        <form (submit)="onSubmit($event)" id="contactForm">
-          <div class="form-group">
-            <label for="name">Nombre Completo *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-
-          <div class="form-group">
-            <label for="company">Propiedad Horizontal</label>
-            <input type="text" id="company" name="company" placeholder="Nombre de la propiedad horizontal">
-          </div>
-
-          <div class="form-group">
-            <label for="service">Servicio de Interés</label>
-            <select id="service" name="service">
-              <option value="">Selecciona un servicio</option>
-              <option value="impermeabilizacion">Impermeabilización de Fachadas y Cubiertas</option>
-              <option value="obra-civil">Obra Civil y Urbanismo</option>
-              <option value="interiores">Adecuación de Interiores</option>
-              <option value="incendios">Red Contra Incendios</option>
-              <option value="consultoria">Consultoría General</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Mensaje *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-submit" [disabled]="isSubmitting">
-            {{ isSubmitting ? 'Enviando...' : 'Contáctanos' }}
-          </button>
-        </form>
       </div>
+    </div>
 
-      <div class="contact-info">
-        <h3>Información de Contacto</h3>
-        
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-          </div>
-          <div class="contact-details">
-            <h4>Ubicación</h4>
-            <p>Colombia</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-          </div>
-          <div class="contact-details">
-            <h4>Teléfono</h4>
-            <p>+57 311 4491331</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-          </div>
-          <div class="contact-details">
-            <h4>Email</h4>
-            <p>contacto.ingenieriagis@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
+    <div class="contact-content">
+      <div class="contact-form-section">
+        <div class="contact-form">
+          <h3>Envíanos un Mensaje</h3>
+          
+          <!-- Mensaje de éxito -->
+          <div *ngIf="showSuccessMessage" class="alert alert-success">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
+            <span>¡Mensaje enviado exitosamente! Te responderemos pronto.</span>
           </div>
-          <div class="contact-details">
-            <h4>Especialización</h4>
-            <p>Propiedad Horizontal</p>
+
+          <!-- Mensaje de error -->
+          <div *ngIf="showErrorMessage" class="alert alert-error">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>{{ errorMessage }}</span>
           </div>
+
+          <form (submit)="onSubmit($event)" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nombre Completo *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+
+              <div class="form-group">
+                <label for="company">Propiedad Horizontal</label>
+                <input type="text" id="company" name="company" placeholder="Nombre de la propiedad horizontal">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Servicio de Interés</label>
+              <select id="service" name="service">
+                <option value="">Selecciona un servicio</option>
+                <option value="impermeabilizacion">Impermeabilización de Fachadas y Cubiertas</option>
+                <option value="obra-civil">Obra Civil y Urbanismo</option>
+                <option value="interiores">Adecuación de Interiores</option>
+                <option value="incendios">Red Contra Incendios</option>
+                <option value="consultoria">Consultoría General</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" [disabled]="isSubmitting">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              {{ isSubmitting ? 'Enviando...' : 'Enviar Mensaje' }}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="contact-info-section">
+        <div class="contact-info">
+          <h3>Información de Contacto</h3>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Ubicación</h4>
+              <p>Colombia</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Teléfono</h4>
+              <p>+57 311 4491331</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>contacto.ingenieriagis@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Especialización</h4>
+              <p>Propiedad Horizontal</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <h4>¿Prefiere agendar una consulta?</h4>
+          <p>Reserve una cita con nuestros expertos para una evaluación personalizada</p>
+          <a routerLink="/appointment" class="btn-appointment">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+            Agendar Consulta
+          </a>
         </div>
       </div>
     </div>
