@@ -62,19 +62,20 @@
 
   .hero-text {
     .hero-logo {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
       
       .hero-logo-image {
-        height: 100px;
+        height: 140px;
         width: auto;
-        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4));
         
         @media (max-width: 768px) {
-          height: 80px;
+          height: 120px;
         }
 
         @media (max-width: 480px) {
-          height: 70px;
+          height: 100px;
         }
       }
     }
