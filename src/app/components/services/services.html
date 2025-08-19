@@ -1,124 +1,137 @@
-<section class="services" id="services">
+<section class="services">
   <div class="container">
     <div class="section-header">
-      <h2>Nuestros Servicios</h2>
-      <p>Servicios diseñados para satisfacer las necesidades de la Propiedad Horizontal, desde impermeabilización hasta urbanismo</p>
+      <div class="section-logo">
+        <img src="/logos/gis-logo-color.png" alt="GIS Ingeniería" class="section-logo-image">
+      </div>
+      <h2>Nuestros Servicios Especializados</h2>
+      <p>Soluciones integrales de ingeniería civil diseñadas para proteger y valorizar su patrimonio</p>
     </div>
 
     <div class="services-grid">
-      <div class="service-card clickable" (click)="openImpermeabilizacionPopup()">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
+      <div class="service-card" (click)="showImpermeabilizacionPopup = true">
+        <div class="service-image">
+          <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen1.jpeg" alt="Impermeabilización">
+          <div class="service-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
         </div>
         <div class="service-content">
-          <h3>Impermeabilización de Fachadas y Cubiertas</h3>
-          <p>Soluciones duraderas y avanzadas para proteger edificaciones, garantizando la estanqueidad y prolongando la vida útil de las estructuras.</p>
-          <ul class="service-features">
-            <li>Sistemas de impermeabilización avanzados</li>
-            <li>Garantías a largo plazo</li>
-            <li>Control riguroso de calidad</li>
-            <li>Protección integral de estructuras</li>
-          </ul>
-          <div class="click-hint">
+          <h3>Impermeabilización</h3>
+          <p>Protección integral de fachadas y cubiertas contra la humedad y deterioro</p>
+          <div class="service-features">
+            <span class="feature">Fachadas</span>
+            <span class="feature">Cubiertas</span>
+            <span class="feature">Terrazas</span>
+          </div>
+          <div class="service-cta">
+            <span>Ver Proyectos</span>
             <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
             </svg>
-            <span>Haz clic para ver galería</span>
           </div>
         </div>
       </div>
 
-      <div class="service-card clickable" (click)="openObraCivilPopup()">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
+      <div class="service-card" (click)="showObraCivilPopup = true">
+        <div class="service-image">
+          <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/obra-civil/imagen1.jpeg" alt="Obra Civil">
+          <div class="service-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
         </div>
         <div class="service-content">
-          <h3>Obra Civil y Urbanismo</h3>
-          <p>Proyectos de obra civil con enfoque integral, desde la conceptualización hasta la entrega final.</p>
-          <ul class="service-features">
-            <li>Localización y Replanteo</li>
-            <li>Excavaciones y Cimentaciones</li>
-            <li>Mampostería y Estructura</li>
-            <li>Urbanismo integral</li>
-          </ul>
-          <div class="click-hint">
+          <h3>Obra Civil</h3>
+          <p>Desarrollo integral de proyectos de construcción y urbanismo</p>
+          <div class="service-features">
+            <span class="feature">Construcción</span>
+            <span class="feature">Urbanismo</span>
+            <span class="feature">Infraestructura</span>
+          </div>
+          <div class="service-cta">
+            <span>Ver Proyectos</span>
             <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
             </svg>
-            <span>Haz clic para ver galería</span>
           </div>
         </div>
       </div>
 
-      <div class="service-card clickable" (click)="openInterioresPopup()">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-          </svg>
+      <div class="service-card" (click)="showInterioresPopup = true">
+        <div class="service-image">
+          <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/interiores/imagen1.jpg" alt="Interiores">
+          <div class="service-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
         </div>
         <div class="service-content">
-          <h3>Adecuación de Interiores</h3>
-          <p>Creación de ambientes funcionales y estéticos, optimizando cada espacio para apartamentos y porterías.</p>
-          <ul class="service-features">
-            <li>Estuco y pintura</li>
-            <li>Drywall</li>
-            <li>Redes Eléctricas y Sanitarias</li>
-            <li>Diseño funcional</li>
-          </ul>
-          <div class="click-hint">
+          <h3>Interiores</h3>
+          <p>Adecuación y remodelación de espacios interiores con acabados de alta calidad</p>
+          <div class="service-features">
+            <span class="feature">Remodelación</span>
+            <span class="feature">Acabados</span>
+            <span class="feature">Diseño</span>
+          </div>
+          <div class="service-cta">
+            <span>Ver Proyectos</span>
             <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
             </svg>
-            <span>Haz clic para ver galería</span>
           </div>
         </div>
       </div>
 
-      <div class="service-card clickable" (click)="openIncendiosPopup()">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
+      <div class="service-card" (click)="showIncendiosPopup = true">
+        <div class="service-image">
+          <img src="https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen1.jpeg" alt="Sistemas Contra Incendios">
+          <div class="service-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
         </div>
         <div class="service-content">
-          <h3>Red Contra Incendios</h3>
-          <p>Suministro e instalación de redes contra incendios con capacidad probada en sistemas de protección activa.</p>
-          <ul class="service-features">
-            <li>Planificación integral</li>
-            <li>Montaje especializado</li>
-            <li>Puesta en marcha</li>
-            <li>Cumplimiento normativo</li>
-          </ul>
-          <div class="click-hint">
+          <h3>Sistemas Contra Incendios</h3>
+          <p>Instalación y mantenimiento de sistemas de protección contra incendios</p>
+          <div class="service-features">
+            <span class="feature">Instalación</span>
+            <span class="feature">Mantenimiento</span>
+            <span class="feature">Certificación</span>
+          </div>
+          <div class="service-cta">
+            <span>Ver Proyectos</span>
             <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
             </svg>
-            <span>Haz clic para ver galería</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="cta-section">
-      <h3>¿Por qué elegirnos?</h3>
-      <p>Experiencia comprobada, gestión integral, visión estratégica, comunicación efectiva y profesionalismo garantizado</p>
-      <div class="cta-buttons">
-        <a routerLink="/contact" class="cta-button">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          Solicitar Cotización
-        </a>
-        <button (click)="navigateToAppointment()" class="cta-button primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-          </svg>
-          📅 Agendar Cita
-        </button>
+    <div class="services-cta">
+      <div class="cta-content">
+        <h3>¿Necesita una consulta especializada?</h3>
+        <p>Nuestros expertos están listos para asesorarlo en su proyecto</p>
+        <div class="cta-buttons">
+          <a routerLink="/contact" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Solicitar Cotización
+          </a>
+          <a routerLink="/appointment" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+            Agendar Consulta
+          </a>
+        </div>
       </div>
     </div>
   </div>
