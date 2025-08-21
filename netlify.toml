@@ -1,20 +1,25 @@
 [build]
   publish = "dist/gis-ingenieria-web/browser"
-  command = "npm run build:netlify"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
 
+# Handle Angular routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Basic headers for Angular
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formspree.io https://www.google-analytics.com; frame-src https://www.google.com;"
 
+# Cache static assets
 [[headers]]
   for = "*.js"
   [headers.values]
@@ -93,51 +98,4 @@
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-# Redirects for SEO
-[[redirects]]
-  from = "/home"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/servicios"
-  to = "/services"
-  status = 301
-
-[[redirects]]
-  from = "/contacto"
-  to = "/contact"
-  status = 301
-
-[[redirects]]
-  from = "/cita"
-  to = "/appointment"
-  status = 301
-
-[[redirects]]
-  from = "/sobre-nosotros"
-  to = "/about"
-  status = 301
-
-# Handle Angular routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Compression
-[context.production.environment]
-  NODE_ENV = "production"
-
-[context.deploy-preview.environment]
-  NODE_ENV = "staging"
-
-[context.branch-deploy.environment]
-  NODE_ENV = "staging" 
+    Cache-Control = "public, max-age=0, must-revalidate" 
