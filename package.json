@@ -1,6 +1,10 @@
 {
   "name": "gis-ingenieria-web",
   "version": "0.0.0",
+  "description": "GIS Ingeniería & Soluciones - Sitio web oficial",
+  "keywords": ["angular", "gis-ingenieria", "colombia", "ingenieria-civil"],
+  "author": "GIS Ingeniería & Soluciones",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

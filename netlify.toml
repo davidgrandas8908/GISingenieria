@@ -1,9 +1,14 @@
 [build]
+  # Base directory is the root of the repository
+  base = "."
+  # Build command for Angular
+  command = "npm install && npm run build"
+  # Publish directory for Angular SSR
   publish = "dist/gis-ingenieria-web/browser"
-  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
+  NODE_ENV = "production"
 
 # Handle Angular routing
 [[redirects]]
