@@ -5,14 +5,40 @@
   <title>GIS Ingeniería & Soluciones - Ingeniería Civil en Colombia</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="/logos/gis-logo-color.png">
-  <link rel="icon" type="image/x-icon" href="/logos/gis-logo-color.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3f51b5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="GIS Ingeniería">
+  <link rel="apple-touch-icon" href="/assets/logos/gis-logo-color.png">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/assets/logos/gis-logo-color.png" as="image" type="image/png">
+  <link rel="preload" href="/assets/logos/gis-logo-blanco.png" as="image" type="image/png">
+  <link rel="preload" href="/assets/logos/gis-logo-negro.png" as="image" type="image/png">
+  <link rel="preload" href="/manifest.json" as="fetch" crossorigin>
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//formspree.io">
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="GIS Ingeniería & Soluciones - Especialistas en ingeniería civil, impermeabilización, obra civil, interiores y sistemas contra incendios en Colombia. Soluciones integrales para propiedad horizontal.">
-  <meta name="keywords" content="ingeniería civil, impermeabilización, obra civil, interiores, sistemas contra incendios, Colombia, propiedad horizontal, construcción">
+  <meta name="keywords" content="ingeniería civil, impermeabilización, obra civil, interiores, sistemas contra incendios, Colombia, propiedad horizontal, construcción, GIS Ingeniería">
   <meta name="author" content="GIS Ingeniería & Soluciones">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="google" content="notranslate">
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="language" content="Spanish">
+  <meta name="geo.region" content="CO">
+  <meta name="geo.placename" content="Colombia">
+  <meta name="geo.position" content="4.7110;-74.0721">
+  <meta name="ICBM" content="4.7110, -74.0721">
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="GIS Ingeniería & Soluciones - Ingeniería Civil en Colombia">
@@ -38,14 +64,18 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "GIS Ingeniería & Soluciones",
-    "description": "Especialistas en ingeniería civil, impermeabilización, obra civil, interiores y sistemas contra incendios",
+    "alternateName": "GIS Ingeniería",
+    "description": "Especialistas en ingeniería civil, impermeabilización, obra civil, interiores y sistemas contra incendios en Colombia",
     "url": "https://gisingenieria.com",
     "telephone": "+573114491331",
     "email": "contacto.ingenieriagis@gmail.com",
+    "logo": "https://gisingenieria.com/assets/logos/gis-logo-color.png",
+    "image": "https://gisingenieria.com/assets/logos/gis-logo-color.png",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "CO",
-      "addressRegion": "Colombia"
+      "addressRegion": "Colombia",
+      "addressLocality": "Colombia"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -54,13 +84,85 @@
     },
     "openingHours": "Mo-Fr 08:00-18:00",
     "priceRange": "$$",
+    "currenciesAccepted": "COP",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+    "areaServed": "Colombia",
     "serviceType": [
       "Ingeniería Civil",
       "Impermeabilización",
       "Obra Civil",
       "Interiores",
       "Sistemas Contra Incendios"
-    ]
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Ingeniería",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ingeniería Civil",
+            "description": "Servicios de ingeniería civil y construcción"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Impermeabilización",
+            "description": "Servicios de impermeabilización para edificios"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Obra Civil",
+            "description": "Construcción y obra civil"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Interiores",
+            "description": "Diseño y construcción de interiores"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sistemas Contra Incendios",
+            "description": "Instalación y mantenimiento de sistemas contra incendios"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GIS Ingeniería & Soluciones",
+    "url": "https://gisingenieria.com",
+    "logo": "https://gisingenieria.com/assets/logos/gis-logo-color.png",
+    "sameAs": [
+      "https://www.facebook.com/gisingenieria",
+      "https://www.linkedin.com/company/gis-ingenieria",
+      "https://www.instagram.com/gis_ingenieria"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+573114491331",
+      "contactType": "customer service",
+      "email": "contacto.ingenieriagis@gmail.com",
+      "availableLanguage": "Spanish"
+    }
   }
   </script>
   
@@ -70,10 +172,40 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      'page_title': 'GIS Ingeniería & Soluciones',
+      'page_location': 'https://gisingenieria.com',
+      'custom_map': {
+        'dimension1': 'service_type',
+        'dimension2': 'page_section'
+      }
+    });
+    
+    // Enhanced ecommerce tracking
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      'send_page_view': true,
+      'page_title': 'GIS Ingeniería & Soluciones - Ingeniería Civil en Colombia',
+      'page_location': 'https://gisingenieria.com',
+      'custom_map': {
+        'dimension1': 'service_type',
+        'dimension2': 'page_section'
+      }
+    });
   </script>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
   <app-root></app-root>
 </body>
 </html>

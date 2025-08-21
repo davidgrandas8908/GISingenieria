@@ -1,6 +1,7 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,13 +10,20 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   @Output() openAppointmentPopup = new EventEmitter<void>();
   
   isSubmitting = false;
   showSuccessMessage = false;
   showErrorMessage = false;
   errorMessage = '';
+
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit() {
+    const metadata = this.seoService.getPageMetadata('contact');
+    this.seoService.updatePageMetadata(metadata);
+  }
 
   openAppointment() {
     this.openAppointmentPopup.emit();

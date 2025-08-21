@@ -1,6 +1,7 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
 
 interface CarouselImage {
   url: string;
@@ -16,10 +17,18 @@ interface CarouselImage {
   templateUrl: './services.html',
   styleUrl: './services.scss'
 })
-export class ServicesComponent {
+export class ServicesComponent implements OnInit {
   @Output() openAppointmentPopup = new EventEmitter<void>();
   
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private seoService: SeoService
+  ) {}
+
+  ngOnInit() {
+    const metadata = this.seoService.getPageMetadata('services');
+    this.seoService.updatePageMetadata(metadata);
+  }
 
   openAppointment() {
     this.openAppointmentPopup.emit();

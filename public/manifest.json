@@ -1,0 +1,96 @@
+{
+  "name": "GIS Ingeniería & Soluciones",
+  "short_name": "GIS Ingeniería",
+  "description": "Especialistas en ingeniería civil, impermeabilización, obra civil, interiores y sistemas contra incendios en Colombia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3f51b5",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["business", "construction", "engineering"],
+  "icons": [
+    {
+      "src": "/assets/logos/gis-logo-color.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logos/gis-logo-color.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logos/gis-logo-blanco.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logos/gis-logo-negro.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Página principal de GIS Ingeniería"
+    },
+    {
+      "src": "/assets/screenshots/services.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Servicios de ingeniería civil"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Servicios",
+      "short_name": "Servicios",
+      "description": "Ver nuestros servicios de ingeniería",
+      "url": "/services",
+      "icons": [
+        {
+          "src": "/assets/logos/gis-logo-color.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contáctanos para tu proyecto",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/assets/logos/gis-logo-color.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Agendar Cita",
+      "short_name": "Cita",
+      "description": "Agenda una cita para tu proyecto",
+      "url": "/appointment",
+      "icons": [
+        {
+          "src": "/assets/logos/gis-logo-color.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

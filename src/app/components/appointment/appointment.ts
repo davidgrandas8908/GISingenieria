@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CalendarService, CalendarEvent } from '../../services/calendar.service';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-appointment',
@@ -24,7 +25,8 @@ export class AppointmentComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private calendarService: CalendarService
+    private calendarService: CalendarService,
+    private seoService: SeoService
   ) {
     this.appointmentForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -40,6 +42,10 @@ export class AppointmentComponent implements OnInit {
   ngOnInit() {
     this.generateAvailableSlots();
     this.setMinDate();
+    
+    // Update SEO metadata for appointment page
+    const metadata = this.seoService.getPageMetadata('appointment');
+    this.seoService.updatePageMetadata(metadata);
   }
 
   setMinDate() {

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Logo principal -->
+  <url>
+    <loc>https://gisingenieria.com/</loc>
+    <image:image>
+      <image:loc>https://gisingenieria.com/assets/logos/gis-logo-color.png</image:loc>
+      <image:title>GIS Ingeniería & Soluciones - Logo Principal</image:title>
+      <image:caption>Logo oficial de GIS Ingeniería & Soluciones, empresa especializada en ingeniería civil en Colombia</image:caption>
+      <image:license>https://gisingenieria.com/terms</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://gisingenieria.com/assets/logos/gis-logo-blanco.png</image:loc>
+      <image:title>GIS Ingeniería & Soluciones - Logo Blanco</image:title>
+      <image:caption>Versión en blanco del logo de GIS Ingeniería & Soluciones</image:caption>
+      <image:license>https://gisingenieria.com/terms</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://gisingenieria.com/assets/logos/gis-logo-negro.png</image:loc>
+      <image:title>GIS Ingeniería & Soluciones - Logo Negro</image:title>
+      <image:caption>Versión en negro del logo de GIS Ingeniería & Soluciones</image:caption>
+      <image:license>https://gisingenieria.com/terms</image:license>
+    </image:image>
+  </url>
+  
+  <!-- Imágenes de servicios - Impermeabilización -->
+  <url>
+    <loc>https://gisingenieria.com/services</loc>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen1.jpeg</image:loc>
+      <image:title>Impermeabilización de Fachadas - GIS Ingeniería</image:title>
+      <image:caption>Servicios profesionales de impermeabilización de fachadas en Colombia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/impermeabilizacion/imagen2.jpeg</image:loc>
+      <image:title>Impermeabilización de Cubiertas - GIS Ingeniería</image:title>
+      <image:caption>Sistemas avanzados de impermeabilización para techos y azoteas</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Imágenes de servicios - Obra Civil -->
+  <url>
+    <loc>https://gisingenieria.com/services</loc>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/obra-civil/imagen1.jpeg</image:loc>
+      <image:title>Proyectos de Obra Civil - GIS Ingeniería</image:title>
+      <image:caption>Desarrollo integral de proyectos de construcción y urbanismo en Colombia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/obra-civil/imagen2.jpeg</image:loc>
+      <image:title>Excavaciones y Cimentaciones - GIS Ingeniería</image:title>
+      <image:caption>Trabajos especializados en fundaciones y estructuras</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Imágenes de servicios - Interiores -->
+  <url>
+    <loc>https://gisingenieria.com/services</loc>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/interiores/imagen1.jpg</image:loc>
+      <image:title>Diseño de Interiores - GIS Ingeniería</image:title>
+      <image:caption>Creación de espacios funcionales y estéticos para interiores</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/interiores/imagen2.jpg</image:loc>
+      <image:title>Estuco y Pintura - GIS Ingeniería</image:title>
+      <image:caption>Acabados profesionales para interiores con materiales de alta calidad</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Imágenes de servicios - Sistemas Contra Incendios -->
+  <url>
+    <loc>https://gisingenieria.com/services</loc>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen1.jpeg</image:loc>
+      <image:title>Sistemas Contra Incendios - GIS Ingeniería</image:title>
+      <image:caption>Instalación profesional de redes de protección contra incendios</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/davidgrandas8908/gis-ingenieria-images/master/gis-ingenieria-images/incendios/imagen2.jpeg</image:loc>
+      <image:title>Planificación Integral de Seguridad - GIS Ingeniería</image:title>
+      <image:caption>Diseño y planificación de sistemas de seguridad contra incendios</image:caption>
+    </image:image>
+  </url>
+</urlset>

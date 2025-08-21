@@ -1,9 +1,29 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://gisingenieria.com/sitemap.xml
+Sitemap: https://gisingenieria.com/sitemap-images.xml
 
 # Disallow admin or private areas (if any)
 Disallow: /admin/
 Disallow: /private/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to sensitive files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /api/
+Disallow: /_redirects

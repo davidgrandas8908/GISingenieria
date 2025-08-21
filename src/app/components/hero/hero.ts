@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,6 +9,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './hero.html',
   styleUrl: './hero.scss'
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit {
 
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit() {
+    const metadata = this.seoService.getPageMetadata('home');
+    this.seoService.updatePageMetadata(metadata);
+  }
 }

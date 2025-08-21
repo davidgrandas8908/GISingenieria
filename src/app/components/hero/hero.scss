@@ -62,20 +62,15 @@
 
   .hero-text {
     .hero-logo {
-      margin-bottom: 3rem;
-      text-align: center;
+      margin-bottom: 2rem;
       
       .hero-logo-image {
-        height: 140px;
+        height: 80px;
         width: auto;
-        filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4));
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
         
         @media (max-width: 768px) {
-          height: 120px;
-        }
-
-        @media (max-width: 480px) {
-          height: 100px;
+          height: 60px;
         }
       }
     }
@@ -232,19 +227,6 @@
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
           }
         }
-
-        &.btn-appointment {
-          background: linear-gradient(135deg, #ff8c00, #ff6b35);
-          color: white;
-          border-color: #ff8c00;
-          box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
-
-          &:hover {
-            background: linear-gradient(135deg, #ff6b35, #ff8c00);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 140, 0, 0.6);
-          }
-        }
       }
     }
   }
@@ -328,10 +310,44 @@
     }
   }
 
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-white);
+    opacity: 0.8;
+    animation: bounce 2s infinite;
 
+    span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
-
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
 
 // Responsive adjustments
 @media (max-width: 768px) {
@@ -342,7 +358,9 @@
       padding-top: 2rem;
     }
     
-
+    .scroll-indicator {
+      bottom: 1rem;
+    }
   }
 }
 
