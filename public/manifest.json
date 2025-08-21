@@ -13,25 +13,25 @@
   "categories": ["business", "construction", "engineering"],
   "icons": [
     {
-      "src": "/assets/logos/gis-logo-color.png",
+      "src": "/favicon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/logos/gis-logo-color.png",
+      "src": "/favicon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/logos/gis-logo-blanco.png",
+      "src": "/logos/gis-logo-blanco.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/logos/gis-logo-negro.png",
+      "src": "/logos/gis-logo-negro.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
@@ -61,7 +61,7 @@
       "url": "/services",
       "icons": [
         {
-          "src": "/assets/logos/gis-logo-color.png",
+          "src": "/favicon.png",
           "sizes": "96x96"
         }
       ]
@@ -73,7 +73,7 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/assets/logos/gis-logo-color.png",
+          "src": "/favicon.png",
           "sizes": "96x96"
         }
       ]
@@ -85,7 +85,7 @@
       "url": "/appointment",
       "icons": [
         {
-          "src": "/assets/logos/gis-logo-color.png",
+          "src": "/favicon.png",
           "sizes": "96x96"
         }
       ]
