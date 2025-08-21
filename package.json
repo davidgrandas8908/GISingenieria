@@ -2,15 +2,20 @@
   "name": "gis-ingenieria-web",
   "version": "0.0.0",
   "description": "GIS Ingeniería & Soluciones - Sitio web oficial",
-  "keywords": ["angular", "gis-ingenieria", "colombia", "ingenieria-civil"],
+  "keywords": [
+    "angular",
+    "gis-ingenieria",
+    "colombia",
+    "ingenieria-civil"
+  ],
   "author": "GIS Ingeniería & Soluciones",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:netlify": "ng build --configuration production",
-    "build:deploy": "ng build --configuration production",
+    "build": "npx ng build",
+    "build:netlify": "npx ng build --configuration production",
+    "build:deploy": "npx ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -41,7 +46,7 @@
   },
   "devDependencies": {
     "@angular/build": "^20.1.4",
-    "@angular/cli": "^20.1.4",
+    "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.1.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
