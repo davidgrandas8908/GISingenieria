@@ -2,7 +2,7 @@
   # Base directory is the root of the repository
   base = "."
   # Build command for Angular
-  command = "npm install && npm run build"
+  command = "chmod +x netlify-build.sh && ./netlify-build.sh"
   # Publish directory for Angular SSR
   publish = "dist/gis-ingenieria-web/browser"
 
