@@ -13,9 +13,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npx --yes @angular/cli build",
-    "build:netlify": "npx --yes @angular/cli build --configuration production",
-    "build:deploy": "npx --yes @angular/cli build --configuration production",
+    "build": "ng build --configuration production",
+    "build:netlify": "ng build --configuration production",
+    "build:deploy": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

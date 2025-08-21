@@ -2,13 +2,14 @@
   # Base directory is the root of the repository
   base = "."
   # Build command for Angular
-  command = "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && npm run build"
+  command = "npm ci --legacy-peer-deps && npm run build"
   # Publish directory for Angular SSR
   publish = "dist/gis-ingenieria-web/browser"
 
 [build.environment]
   NODE_VERSION = "20.19.0"
   NODE_ENV = "production"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 # Handle Angular routing
 [[redirects]]
