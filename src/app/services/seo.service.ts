@@ -57,7 +57,7 @@ export class SeoService {
     const baseUrl = 'https://gisingenieria.com';
     const baseImage = `${baseUrl}/assets/logos/gis-logo-color.png`;
 
-    const metadata = {
+    const metadata: { [key: string]: any } = {
       home: {
         title: 'GIS Ingeniería & Soluciones - Ingeniería Civil en Colombia',
         description: 'GIS Ingeniería & Soluciones - Especialistas en ingeniería civil, impermeabilización, obra civil, interiores y sistemas contra incendios en Colombia. Soluciones integrales para propiedad horizontal.',
@@ -95,6 +95,6 @@ export class SeoService {
       }
     };
 
-    return metadata[page] || metadata.home;
+    return metadata[page] || metadata['home'];
   }
 }

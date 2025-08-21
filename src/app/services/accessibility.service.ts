@@ -119,7 +119,7 @@ export class AccessibilityService {
       if (event.key === 'Escape') {
         const modals = document.querySelectorAll('.modal, .popup');
         modals.forEach(modal => {
-          if (modal.classList.contains('show') || modal.style.display === 'block') {
+          if (modal.classList.contains('show') || (modal as HTMLElement).style.display === 'block') {
             const closeButton = modal.querySelector('[data-dismiss="modal"], .close');
             if (closeButton) {
               (closeButton as HTMLElement).click();
