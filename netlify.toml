@@ -1,6 +1,6 @@
 [build]
-  publish = "dist/gis-ingenieria-web"
-  command = "npm run build"
+  publish = "dist/gis-ingenieria-web/browser"
+  command = "npm run build:netlify"
 
 [build.environment]
   NODE_VERSION = "18"
